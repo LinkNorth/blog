@@ -79,3 +79,20 @@ deploy:
   repo: git@github.com:argelius/jwb-blog.git
   branch: gh-pages
   message: "Deploying blog"
+
+# Authors
+authors:
+  default:
+    name: 'Zonky Team'
+  agge:
+    name: "Andreas Argelius"
+    email: andreas@argeli.us
+  bror:
+    name: 'Viktor Silfverström'
+    email: viktor@silfverstrom.com
+  sillen:
+    name: 'Niklas Silfverström'
+    email: niklas@silferstrom.com
+  ande:
+    name: 'Andreas Nilsson'
+    email: andenilsson87@gmail.com

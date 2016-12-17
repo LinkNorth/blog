@@ -389,6 +389,10 @@ character-parser@1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/character-parser/-/character-parser-1.2.1.tgz#c0dde4ab182713b919b970959a123ecc1a30fcd6"
 
+charenc@~0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.1.tgz#004cff9feaf102382ed12db58dd6f962796d6e88"
+
 cheerio@^0.20.0:
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/cheerio/-/cheerio-0.20.0.tgz#5c710f2bab95653272842ba01c6ea61b3545ec35"
@@ -440,6 +444,10 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-1.0.5.tgz#938370a57b4a51dea2c77c15d5c5fdf895164009"
   dependencies:
     delayed-stream "~1.0.0"
+
+commander@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-1.0.0.tgz#5e6a88e7070ff5908836ead19169548c30f90bcd"
 
 commander@2.8.x, commander@^2.2.0:
   version "2.8.1"
@@ -552,6 +560,10 @@ cross-spawn@^4.0.0:
   dependencies:
     lru-cache "^4.0.1"
     which "^1.2.9"
+
+crypt@~0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/crypt/-/crypt-0.0.1.tgz#5f11b21a6c05ef1b5e79708366da6374ece1e6a2"
 
 cryptiles@2.x.x:
   version "2.0.5"
@@ -1082,6 +1094,13 @@ hawk@~3.1.3:
     hoek "2.x.x"
     sntp "1.x.x"
 
+hexo-authors@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/hexo-authors/-/hexo-authors-0.0.7.tgz#c37b0d6918b557921e24f791fee8aa9351d84fae"
+  dependencies:
+    md5 "^2.2.1"
+    object-assign "^4.1.0"
+
 hexo-browsersync@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/hexo-browsersync/-/hexo-browsersync-0.2.0.tgz#1e6c114a06c0a964bf0033dd1175a64307b678d8"
@@ -1114,6 +1133,12 @@ hexo-deployer-git@^0.2.0:
     hexo-util "^0.6.0"
     moment "^2.13.0"
     swig "^1.4.2"
+
+hexo-front-matter-excerpt@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/hexo-front-matter-excerpt/-/hexo-front-matter-excerpt-0.2.0.tgz#42d18d5d29a319e4fcadb9f30931e24a93aa94e4"
+  dependencies:
+    yaml-front-matter "^3.0.1"
 
 hexo-front-matter@^0.2.2:
   version "0.2.3"
@@ -1362,7 +1387,7 @@ is-binary-path@^1.0.0:
   dependencies:
     binary-extensions "^1.0.0"
 
-is-buffer@^1.0.2:
+is-buffer@^1.0.2, is-buffer@~1.1.1:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.4.tgz#cfc86ccd5dc5a52fa80489111c6920c457e2d98b"
 
@@ -1504,7 +1529,7 @@ jodid25519@^1.0.0:
   dependencies:
     jsbn "~0.1.0"
 
-js-yaml@^3.6.1:
+js-yaml@^3.5.2, js-yaml@^3.6.1:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.7.0.tgz#5c967ddd837a9bfdca5f2de84253abe8a1c03b80"
   dependencies:
@@ -1666,6 +1691,14 @@ markdown@~0.5.0:
 marked@^0.3.5:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.6.tgz#b2c6c618fccece4ef86c4fc6cb8a7cbf5aeda8d7"
+
+md5@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/md5/-/md5-2.2.1.tgz#53ab38d5fe3c8891ba465329ea23fac0540126f9"
+  dependencies:
+    charenc "~0.0.1"
+    crypt "~0.0.1"
+    is-buffer "~1.1.1"
 
 merge@^1.2.0:
   version "1.2.0"
@@ -2861,6 +2894,13 @@ y18n@^3.2.0, y18n@^3.2.1:
 yallist@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.0.0.tgz#306c543835f09ee1a4cb23b7bce9ab341c91cdd4"
+
+yaml-front-matter@^3.0.1:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/yaml-front-matter/-/yaml-front-matter-3.4.0.tgz#c4bb5c41e8797fef584b1872cc052cdc26210dca"
+  dependencies:
+    commander "1.0.0"
+    js-yaml "^3.5.2"
 
 yargs-parser@^4.1.0:
   version "4.2.0"
