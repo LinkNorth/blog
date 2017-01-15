@@ -445,10 +445,6 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-1.0.0.tgz#5e6a88e7070ff5908836ead19169548c30f90bcd"
-
 commander@2.8.x, commander@^2.2.0:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.8.1.tgz#06be367febfda0c330aa1e2a072d3dc9762425d4"
@@ -1094,9 +1090,9 @@ hawk@~3.1.3:
     hoek "2.x.x"
     sntp "1.x.x"
 
-hexo-authors@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/hexo-authors/-/hexo-authors-0.0.7.tgz#c37b0d6918b557921e24f791fee8aa9351d84fae"
+hexo-authors@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/hexo-authors/-/hexo-authors-0.1.0.tgz#b41d72ce2e9e44b02e154530b6046c6833dbc114"
   dependencies:
     md5 "^2.2.1"
     object-assign "^4.1.0"
@@ -1133,12 +1129,6 @@ hexo-deployer-git@^0.2.0:
     hexo-util "^0.6.0"
     moment "^2.13.0"
     swig "^1.4.2"
-
-hexo-front-matter-excerpt@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/hexo-front-matter-excerpt/-/hexo-front-matter-excerpt-0.2.0.tgz#42d18d5d29a319e4fcadb9f30931e24a93aa94e4"
-  dependencies:
-    yaml-front-matter "^3.0.1"
 
 hexo-front-matter@^0.2.2:
   version "0.2.3"
@@ -1529,7 +1519,7 @@ jodid25519@^1.0.0:
   dependencies:
     jsbn "~0.1.0"
 
-js-yaml@^3.5.2, js-yaml@^3.6.1:
+js-yaml@^3.6.1:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.7.0.tgz#5c967ddd837a9bfdca5f2de84253abe8a1c03b80"
   dependencies:
@@ -2894,13 +2884,6 @@ y18n@^3.2.0, y18n@^3.2.1:
 yallist@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.0.0.tgz#306c543835f09ee1a4cb23b7bce9ab341c91cdd4"
-
-yaml-front-matter@^3.0.1:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/yaml-front-matter/-/yaml-front-matter-3.4.0.tgz#c4bb5c41e8797fef584b1872cc052cdc26210dca"
-  dependencies:
-    commander "1.0.0"
-    js-yaml "^3.5.2"
 
 yargs-parser@^4.1.0:
   version "4.2.0"
