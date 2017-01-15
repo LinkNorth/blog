@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+title: Zonkytech Blog
+subtitle: Official development blog from the Zonkytech Team.
+description: Thoughts and ramblings about JavaScript, development and other stuff from the Zonkytech Team.
+author: Zonkytech Team
+language: en
+timezone: Europe/Stockholm
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com/jwb-blog
-root: /jwb-blog
+url: https://zonkytech.github.io/blog/
+root: /blog
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: apollo
+theme: zonky
 
 # Archive generator
 archive_generator:
@@ -76,7 +76,7 @@ archive_generator:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:argelius/jwb-blog.git
+  repo: git@github.com:zonkytech/blog.git
   branch: gh-pages
   message: "Deploying blog"
 
@@ -86,13 +86,13 @@ authors:
     name: 'Zonky Team'
   agge:
     name: "Andreas Argelius"
-    email: andreas@argeli.us
+    gravatar: 99e1126ed06c2c997f60dc595f14a3f0
   bror:
     name: 'Viktor Silfverström'
-    email: viktor@silfverstrom.com
+    gravatar: a9e400daed55db2cd067e9afcd46e655
   sillen:
     name: 'Niklas Silfverström'
-    email: niklas@silferstrom.com
+    gravatar: 5c19df443aa3edb5c20170dbdf5129b3
   ande:
     name: 'Andreas Nilsson'
-    email: andenilsson87@gmail.com
+    gravatar: 126e30dbfd4504c8b39ee09f485fbc1e
