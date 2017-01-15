@@ -11,7 +11,7 @@ This is the first article in our blog. In this blog we will write about our open
 
 <!-- more -->
 
-## Who are Zonkies?
+## Who are the Zonkies?
 
 The team consists of Andreas Nilsson, Niklas Silfverström, Viktor Silfverström and Andreas Argelius. We are four friends who grew up together in the south of Sweden.
 
