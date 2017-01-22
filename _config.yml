@@ -78,7 +78,7 @@ deploy:
   type: git
   repo: git@github.com:zonkytech/blog.git
   branch: gh-pages
-  message: "Deploying blog"
+  message: "Deploying blog! [ci skip]"
 
 # Authors
 authors:
