@@ -1,0 +1,15 @@
+machine:
+  node:
+    version: 6.9.4
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+dependencies:
+  override:
+    - git submodule update --init
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
+deployment:
+  branch: master
+  commands:
+    - hexo deploy
