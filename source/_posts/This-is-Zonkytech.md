@@ -2,7 +2,9 @@
 title: This is Zonkytech
 authorId: agge
 date: 2017-01-15 16:38:53
-tags: zonkytech, javascript
+tags:
+  - zonkytech
+  - javascript
 ---
 
 Hello and welcome!
