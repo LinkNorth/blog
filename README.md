@@ -7,8 +7,7 @@ This is the repo for the official blog. The blog is using [Hexo](https://hexo.io
 To start the development server you need to install the theme, npm dependencies and run `hexo server`.
 
 ```
-git submodule init
-git submodule update
+git submodule update --init
 yarn install
 hexo server
 ```
