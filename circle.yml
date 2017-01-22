@@ -10,6 +10,7 @@ dependencies:
   cache_directories:
     - ~/.cache/yarn
 deployment:
-  branch: master
-  commands:
-    - hexo deploy
+  production:
+    branch: master
+    commands:
+      - hexo deploy
