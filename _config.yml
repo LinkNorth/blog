@@ -96,3 +96,8 @@ authors:
   ande:
     name: 'Andreas Nilsson'
     gravatar: 126e30dbfd4504c8b39ee09f485fbc1e
+
+# Robots
+robotstxt:
+  useragent: "*"
+  sitemap: /sitemap.xml
