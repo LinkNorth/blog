@@ -13,4 +13,6 @@ deployment:
   production:
     branch: master
     commands:
+      - git config --global user.email "circleci@example.com"
+      - git config --global user.name "CircleCI"
       - hexo deploy
