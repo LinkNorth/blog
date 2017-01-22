@@ -23,4 +23,4 @@ deployment:
       - git config --global user.email "zonkytech@gmail.com"
       - git config --global user.name "zonkbot"
       - hexo deploy
-      - curl "https://api.keycdn.com/zones/purge/${KEY_CDN_ZONE_ID}.json" -u ${KEY_CDN_API_KEY}:
+      - wget https://api.keycdn.com/zones/purge/${KEY_CDN_ZONE_ID}.json --user="${KEY_CDN_API_KEY}" --password='' -v
