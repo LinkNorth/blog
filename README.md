@@ -29,3 +29,5 @@ The blog is deployed to GitHub pages. Just run the following command to deploy t
 ```
 hexo deploy
 ```
+
+**The blog will be deployed automatically when pushing to `master` branch so there is generally no need to deploy manually.**
