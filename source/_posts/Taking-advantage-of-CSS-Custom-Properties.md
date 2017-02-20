@@ -99,7 +99,7 @@ While similar functionality has existed in preprocessors such as [SASS](http://s
 ## Using `@media` rules
 Since the variables can be changed at runtime, they work very well for when we want different styling depending on certain screen width values. Instead of writing new rules for each width, we can simply update the variable.
 
-    css
+```css
 :root {
   --item-margin: 40px;
 }
@@ -118,7 +118,7 @@ Since the variables can be changed at runtime, they work very well for when we w
 .item {
   margin: var(--item-margin);
 }
-    
+```
 
 ## Using Javascript
 Variables can also be updated through JavaScript using getPropertyValue and setProperty.
