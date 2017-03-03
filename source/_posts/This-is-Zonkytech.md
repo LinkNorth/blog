@@ -15,7 +15,7 @@ This is the first article in our blog. In this blog we will write about our open
 
 ## Who are the Zonkies?
 
-The team consists of Andreas Nilsson, Niklas Silfverström, Viktor Silfverström and Andreas Argelius. We are four friends who grew up together in the south of Sweden.
+The team consists of Andreas Löfgren, Niklas Silfverström, Viktor Silfverström and Andreas Argelius. We are four friends who grew up together in the south of Sweden.
 
 We love JavaScript and web development and in 2016 we decided that we wanted to do something together which is why we created **Zonkytech**.
 
