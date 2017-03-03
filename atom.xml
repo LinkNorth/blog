@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Zonkytech Blog</title>
+  <subtitle>Official development blog from the Zonkytech Team.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.zonkytech.com/"/>
+  <updated>2017-03-03T14:01:18.356Z</updated>
+  <id>https://blog.zonkytech.com/</id>
+  
+  <author>
+    <name>Zonkytech Team</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Taking advantage of CSS Custom Properties</title>
+    <link href="https://blog.zonkytech.com/2017/02/16/Taking-advantage-of-CSS-Custom-Properties/"/>
+    <id>https://blog.zonkytech.com/2017/02/16/Taking-advantage-of-CSS-Custom-Properties/</id>
+    <published>2017-02-16T19:03:00.000Z</published>
+    <updated>2017-03-03T14:01:18.356Z</updated>
+    
+    <content type="html"><![CDATA[<p>The draft for <a href="https://drafts.csswg.org/css-variables/" target="_blank" rel="external">Custom CSS Properties</a> has existed for quite some time and since implementation for it started in <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/status/csscustompropertiesakacssvariables/" target="_blank" rel="external">Microsoft Edge</a>, all of the major browsers will soon <a href="http://caniuse.com/#feat=css-variables" target="_blank" rel="external">support</a> it. If you haven’t looked at it yet, now might be a good time to prepare for it.</p>
+<a id="more"></a>
+<h2 id="What-are-CSS-Custom-Properties"><a href="#What-are-CSS-Custom-Properties" class="headerlink" title="What are CSS Custom Properties?"></a>What are CSS Custom Properties?</h2><p>Custom properties makes it possible to define variables that can be used in your CSS code. The following example adds a custom color variable that can be reused.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* Define variable*/</span></div><div class="line"><span class="selector-pseudo">:root</span> &#123;   </div><div class="line">  <span class="attribute">--big-margin</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#my-container</span> &#123;   </div><div class="line">  <span class="attribute">margin</span>: <span class="built_in">var</span>(--big-margin);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Variables are defined by prefixing our variable name with two dashes and can be accessed using the <code>var()</code> function. It is also possible to extend the properties when different styling is used in other contexts.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">span</span> &#123;</div><div class="line">  <span class="attribute">color</span>:<span class="built_in">var</span>(--span-color, red);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.my-div</span> &#123;   </div><div class="line">  <span class="attribute">--span-color</span>: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>This of course works similar to regular CSS extensions, one could simply write <code>.my-div span { color:blue }</code> to achieve the same effect. But the benefit of using variables becomes obvious when we want to change the style of multiple components within a certain context. Shown below are two examples of CSS code that does the same thing, the first one using basic CSS and the second one using custom properties.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.reply-button</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#ccc</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.cancel-button</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#ddd</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.content</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.comment-section</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.comment-section</span> <span class="selector-class">.content</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.comment-section</span> <span class="selector-class">.reply-button</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#fff</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.comment-section</span> <span class="selector-class">.cancel-button</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#eee</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The above code could instead be written as:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.reply-button</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="built_in">var</span>(--reply-bg-color, #ccc);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.cancel-button</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="built_in">var</span>(--cancel-bg-color, #ddd);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.content</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="built_in">var</span>(--content-font-size, 12px);</div><div class="line">  <span class="attribute">padding</span>: <span class="built_in">var</span>(--content-padding: 0 10px);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.comment-section</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">--content-font-size</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">--reply-bg-color</span>: <span class="number">#fff</span>;</div><div class="line">  <span class="attribute">--cancel-bg-color</span>: <span class="number">#eee</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>While similar functionality has existed in preprocessors such as <a href="http://sass-lang.com/" target="_blank" rel="external">SASS</a> and <a href="http://lesscss.org/" target="_blank" rel="external">LESS</a> for a while (with arguably better looking syntax as well), the main difference is that the variables can be used at runtime. This gives us the possibility to write CSS in a way that was not possible before, and possibly write cleaner code at the same time. A typical example of when one would benefit from this, is when using <code>@media</code> rules.</p>
+<h2 id="Using-media-rules"><a href="#Using-media-rules" class="headerlink" title="Using @media rules"></a>Using <code>@media</code> rules</h2><p>Since the variables can be changed at runtime, they work very well for when we want different styling depending on certain screen width values. Instead of writing new rules for each width, we can simply update the variable.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="selector-pseudo">:root</span> &#123;</div><div class="line">  <span class="attribute">--item-margin</span>: <span class="number">40px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">1000px</span>) &#123;</div><div class="line">  <span class="selector-pseudo">:root</span> &#123;</div><div class="line">    <span class="attribute">--item-margin</span>: <span class="number">30px</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">800px</span>) &#123;</div><div class="line">  <span class="selector-pseudo">:root</span> &#123;</div><div class="line">    <span class="attribute">--item-margin</span>: <span class="number">20px</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.item</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="built_in">var</span>(--item-margin);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Using-Javascript"><a href="#Using-Javascript" class="headerlink" title="Using Javascript"></a>Using Javascript</h2><p>Variables can also be updated through JavaScript using getPropertyValue and setProperty.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Set margin value</span></div><div class="line"><span class="built_in">document</span>.body.style.setProperty(<span class="string">'--item-margin'</span>, <span class="string">'50px'</span>);</div><div class="line"></div><div class="line"><span class="comment">// Get margin value</span></div><div class="line"><span class="built_in">document</span>.body.style.getPropertyValue(<span class="string">'--item-margin'</span>);</div></pre></td></tr></table></figure>
+<p>Custom Properties are a much needed improvement to the CSS standard, but there are still advantages to preprocessors, such as nested syntax, that will probably keep the majority of developers from ditching their favorite tools completely. But the CSS standard is slowly catching up to the preprocessors in terms of functionality. Tools such as the <a href="https://github.com/postcss/postcss" target="_blank" rel="external">PostCSS</a> plugin <a href="http://cssnext.io/" target="_blank" rel="external">cssnext</a> translates CSS written using the newest syntax from the W3C drafts into browser compatible code, with the goal of being future proof so that the tool one day can be seamlessly removed. Who knows, one day we might not need any CSS preprocessors at all.</p>
+<h2 id="Recommended-Reading"><a href="#Recommended-Reading" class="headerlink" title="Recommended Reading"></a>Recommended Reading</h2><p><a href="http://www.xanthir.com/blog/b4KT0" target="_blank" rel="external">Let’s Talk about CSS Variables</a> - Tab Atkins Jr<br><a href="https://drafts.csswg.org/css-variables/" target="_blank" rel="external">CSS Custom Properties - CSSWG Editors Draft</a><br><a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank" rel="external">CSS Variables: Why should you care? </a> - Rob Dodson</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The draft for &lt;a href=&quot;https://drafts.csswg.org/css-variables/&quot;&gt;Custom CSS Properties&lt;/a&gt; has existed for quite some time and since implementation for it started in &lt;a href=&quot;https://developer.microsoft.com/en-us/microsoft-edge/platform/status/csscustompropertiesakacssvariables/&quot;&gt;Microsoft Edge&lt;/a&gt;, all of the major browsers will soon &lt;a href=&quot;http://caniuse.com/#feat=css-variables&quot;&gt;support&lt;/a&gt; it. If you haven’t looked at it yet, now might be a good time to prepare for it.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="zonkytech" scheme="https://blog.zonkytech.com/tags/zonkytech/"/>
+    
+      <category term="css" scheme="https://blog.zonkytech.com/tags/css/"/>
+    
+      <category term="javascript" scheme="https://blog.zonkytech.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>This is Zonkytech</title>
+    <link href="https://blog.zonkytech.com/2017/01/15/This-is-Zonkytech/"/>
+    <id>https://blog.zonkytech.com/2017/01/15/This-is-Zonkytech/</id>
+    <published>2017-01-15T15:38:53.000Z</published>
+    <updated>2017-03-03T14:01:18.356Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hello and welcome!</p>
+<p>This is the first article in our blog. In this blog we will write about our open source projects and share our thoughts about <strong>JavaScript</strong> and <strong>web development</strong>.</p>
+<a id="more"></a>
+<h2 id="Who-are-the-Zonkies"><a href="#Who-are-the-Zonkies" class="headerlink" title="Who are the Zonkies?"></a>Who are the Zonkies?</h2><p>The team consists of Andreas Löfgren, Niklas Silfverström, Viktor Silfverström and Andreas Argelius. We are four friends who grew up together in the south of Sweden.</p>
+<p>We love JavaScript and web development and in 2016 we decided that we wanted to do something together which is why we created <strong>Zonkytech</strong>.</p>
+<p>All four of us are experienced developing several different services and applications. As a team we have a good understanding of the whole development process. Our long-term goal is to create services that scales well and makes life easier for our users.</p>
+<h2 id="What-is-the-purpose-of-this-blog"><a href="#What-is-the-purpose-of-this-blog" class="headerlink" title="What is the purpose of this blog?"></a>What is the purpose of this blog?</h2><p>When we first started talking about creating Zonkytech one of the things we all agreed on was that we want to contribute to the JavaScript community. We want to contribute code to open source projects that we are benefiting from and also release much of our own code as open source.</p>
+<p>Another way we want to contribute is by writing articles where we share our thoughts about development and try to help other developers that are struggling with the same challenges that we are. We also want to use this blog to promote and showcase projects and tools that we like.</p>
+<p>Happy coding!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hello and welcome!&lt;/p&gt;
+&lt;p&gt;This is the first article in our blog. In this blog we will write about our open source projects and share our thoughts about &lt;strong&gt;JavaScript&lt;/strong&gt; and &lt;strong&gt;web development&lt;/strong&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="zonkytech" scheme="https://blog.zonkytech.com/tags/zonkytech/"/>
+    
+      <category term="javascript" scheme="https://blog.zonkytech.com/tags/javascript/"/>
+    
+  </entry>
+  
+</feed>
